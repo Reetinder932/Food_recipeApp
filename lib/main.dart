@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/home.dart';
 import 'package:food_app/loading.dart';
+
 void main() {
   runApp(MaterialApp(
     routes: {
-
-      "/":(context)=>loading(),
-      "/home":(context)=>Home()
+      "/": (context) => const Loading(),
+      "/home": (context) => const Home()
     },
   ));
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -39,8 +40,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-     home: Home(),
+      home: const Home(),
     );
   }
 }
-
