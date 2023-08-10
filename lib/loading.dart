@@ -1,34 +1,32 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-class loading extends StatefulWidget {
-  const loading({super.key});
+
+class Loading extends StatefulWidget {
+  const Loading({super.key});
 
   @override
-  State<loading> createState() => _loadingState();
+  State<Loading> createState() => _LoadingState();
 }
 
-class _loadingState extends State<loading> {
-  void Loading() {
-  Future.delayed(Duration(seconds:3),()
-  {
-    Navigator.of(context).pushNamed("/home");
-  });
-  }
+class _LoadingState extends State<Loading> {
+  void loading() => Future.delayed(const Duration(seconds: 3),
+      () => Navigator.of(context).pushNamed("/home"));
+
   @override
   void initState() {
-    // TODO: implement initState
+    loading();
     super.initState();
-    Loading();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xff071938),
         ),
-         margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+        margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -44,13 +42,12 @@ class _loadingState extends State<loading> {
                   speed: const Duration(milliseconds: 150),
                 ),
               ],
-
               totalRepeatCount: 4,
               pause: const Duration(milliseconds: 50),
               displayFullTextOnTap: true,
               stopPauseOnTap: true,
             ),
-            SpinKitCircle(
+            const SpinKitCircle(
               color: Colors.blueAccent,
               size: 300,
             )
